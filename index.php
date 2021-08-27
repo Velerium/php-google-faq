@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foreach Google FAQs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,7 +36,7 @@
             'answer' => "Your account is associated with a country (or territory) in the Terms of Service so that we can determine two things:
                         <ol>
                         <li>The Google affiliate that provides the services, that processes your information, and that is responsible for complying with applicable privacy laws. Generally, Google offers its consumer services through either of two companies:
-                            <ol>
+                            <ol class=\"inner\" type=\"a\">
                             <li>Google Ireland Limited, if you’re located in the European Economic Area (EU countries plus Iceland, Liechtenstein, and Norway) or Switzerland</li>
                             <li>Google LLC, based in the United States, for the rest of the world</li></ol>
                         </li>
@@ -46,7 +50,7 @@
 
         [
             'question' => "How can I remove information about myself from Google’s search results?",
-            'answer' => "Google search results are a reflection of the content publicly available on the web. Search engines can't remove content directly from websites, so removing search results from Google wouldn't remove the content from the web. If you want to remove something from the web, you should <a href=\"https://support.google.com/websearch/answer/9109?hl=en-GB\">contact the webmaster</a> of the site the content is posted on and ask him or her to make a change. Additionally, if under European data protection law, you would like to request removal of certain information about you that appears in Google's search results, please <a href=\"https://www.google.com/webmasters/tools/legal-removal-request?complaint_type=rtbf&visit_id=637656610667188231-2515788316&hl=en-GB&rd=1\">click here<a>. Once the content has been removed and Google has noted the update, the information will no longer appear in Google's search results. If you have an urgent removal request, you can also <a href=\"https://support.google.com/websearch/troubleshooter/3111061?hl=en-GB\">visit our help page for more information<a>."
+            'answer' => "Google search results are a reflection of the content publicly available on the web. Search engines can't remove content directly from websites, so removing search results from Google wouldn't remove the content from the web. If you want to remove something from the web, you should <a href=\"https://support.google.com/websearch/answer/9109?hl=en-GB\">contact the webmaster</a> of the site the content is posted on and ask him or her to make a change. Additionally, if under European data protection law, you would like to request removal of certain information about you that appears in Google's search results, please <a href=\"https://www.google.com/webmasters/tools/legal-removal-request?complaint_type=rtbf&visit_id=637656610667188231-2515788316&hl=en-GB&rd=1\">click here</a>. Once the content has been removed and Google has noted the update, the information will no longer appear in Google's search results. If you have an urgent removal request, you can also <a href=\"https://support.google.com/websearch/troubleshooter/3111061?hl=en-GB\">visit our help page for more information</a>."
         ],
 
         [
@@ -57,18 +61,37 @@
 ?>
 
 <body>
-    <header></header>
+    <header>
+        <div class="logoAccount"></div>
+        <div class="nav">
+            <ul>
+                <li>Overview</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Technologies</li>
+                <li class="selected">FAQ</li>
+            </ul>
+        </div>
+    </header>
 
     <main>
 
         <?php foreach ($faqs as $faq) {
             echo "<h2>{$faq['question']}</h2>";
-            echo $faq['answer'];
+            $faq['answer'] = str_replace("\n", "</p><p>", $faq['answer']);
+            echo "<p>{$faq['answer']}</p>";
         };
         ?>
 
     </main>
 
-    <footer></footer>
+    <footer>
+        <ul>
+            <li>Google</li>
+            <li>About Google</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+        </ul>
+    </footer>
 </body>
 </html>
