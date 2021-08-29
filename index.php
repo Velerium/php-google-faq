@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -62,7 +63,16 @@
 
 <body>
     <header>
-        <div class="logoAccount"></div>
+        <div class="logoAccount">
+            <div class="logo">
+                <img src="./img/Google FAQ.png" alt="">
+            </div>
+            <div class="accountDetails">
+                <img src="./img/Dots.png" alt="">
+                <i class="account fas fa-user"></i>
+            </div>
+        </div>
+
         <div class="nav">
             <ul>
                 <li>Overview</li>
@@ -86,12 +96,20 @@
     </main>
 
     <footer>
-        <ul>
-            <li>Google</li>
-            <li>About Google</li>
-            <li>Privacy</li>
-            <li>Terms</li>
-        </ul>
+        <div class="innerFooter">
+            <ul>
+                <li>Google</li>
+                <li>About Google</li>
+                <li>Privacy</li>
+                <li>Terms</li>
+            </ul>
+            <select name="language" id="lang">
+                <option value="none">Select language...</option>
+                <option value="english">English</option>
+                <option value="italian">Italiano</option>
+                <option value="german">Deutsch</option>
+            </select>
+        </div>
     </footer>
 </body>
 </html>

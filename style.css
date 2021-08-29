@@ -26,6 +26,7 @@ p {
 a {
     color: rgb(24, 97, 255);
     text-decoration: none;
+    outline: none;
 }
 
 ol {
@@ -55,6 +56,27 @@ header > * {
 
 .logoAccount {
     height: 65%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+}
+
+.accountDetails {
+    display: flex;
+    align-items: center;
+}
+
+.accountDetails img {
+    margin-right: 25px;
+}
+
+.account {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: violet;
+    font-size: 21px;
+    text-align: center;
 }
 
 .nav {
@@ -65,7 +87,6 @@ header > * {
     list-style: none;
     display: flex;
     padding-left: 20px;
-    
 }
 
 .nav li {
@@ -93,6 +114,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.innerFooter {
+    width: 52%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.innerFooter select {
+    outline: none;
 }
 
 footer ul {
