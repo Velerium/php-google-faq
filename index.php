@@ -62,54 +62,57 @@
 ?>
 
 <body>
-    <header>
-        <div class="logoAccount">
-            <div class="logo">
-                <img src="./img/Google FAQ.png" alt="">
+    <div class="container">
+        <header>
+            <div class="logoAccount">
+                <div class="logo">
+                    <img src="./img/Google FAQ.png" alt="">
+                </div>
+                <div class="accountDetails">
+                    <img src="./img/Dots.png" alt="">
+                    <i class="account fas fa-user"></i>
+                </div>
             </div>
-            <div class="accountDetails">
-                <img src="./img/Dots.png" alt="">
-                <i class="account fas fa-user"></i>
+
+            <div class="nav">
+                <ul>
+                    <li>Overview</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    <li>Technologies</li>
+                    <li class="selected">FAQ</li>
+                </ul>
             </div>
-        </div>
+        </header>
 
-        <div class="nav">
-            <ul>
-                <li>Overview</li>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Technologies</li>
-                <li class="selected">FAQ</li>
-            </ul>
-        </div>
-    </header>
+        <main>
 
-    <main>
+            <?php foreach ($faqs as $faq) {
+                echo "<button class=\"accordionQ\"><h2>{$faq['question']}</h2></button>";
+                $faq['answer'] = str_replace("\n", "</p><p>", $faq['answer']);
+                echo "<div class=\"accordionA\"><p>{$faq['answer']}</p></div>";
+            };
+            ?>
 
-        <?php foreach ($faqs as $faq) {
-            echo "<h2>{$faq['question']}</h2>";
-            $faq['answer'] = str_replace("\n", "</p><p>", $faq['answer']);
-            echo "<p>{$faq['answer']}</p>";
-        };
-        ?>
+        </main>
 
-    </main>
-
-    <footer>
-        <div class="innerFooter">
-            <ul>
-                <li>Google</li>
-                <li>About Google</li>
-                <li>Privacy</li>
-                <li>Terms</li>
-            </ul>
-            <select name="language" id="lang">
-                <option value="none">Select language...</option>
-                <option value="english">English</option>
-                <option value="italian">Italiano</option>
-                <option value="german">Deutsch</option>
-            </select>
-        </div>
-    </footer>
+        <footer>
+            <div class="innerFooter">
+                <ul>
+                    <li>Google</li>
+                    <li>About Google</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+                <select name="language" id="lang">
+                    <option value="none">Select language...</option>
+                    <option value="english">English</option>
+                    <option value="italian">Italiano</option>
+                    <option value="german">Deutsch</option>
+                </select>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -9,8 +9,7 @@
 
 h2 {
     font-family: 'Lato', sans-serif;
-    margin-top: 70px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     line-height: initial;
 }
 
@@ -37,6 +36,12 @@ ol {
 
 ol li {
     padding-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -103,12 +108,25 @@ header > * {
 
 main {
     padding-top: 130px;
-    width: 52%;
+    width: 55%;
     margin: 0 auto;
+    flex-grow: 1;
+}
+
+.accordionQ {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.accordionA {
+    display: none;
+    padding: 10px;
 }
 
 footer {
-    margin: 0 auto;
+    width: 100%;
+    margin: 50px auto 0;
     height: 50px;
     background-color: #f5f5f5;
     display: flex;
@@ -117,7 +135,7 @@ footer {
 }
 
 .innerFooter {
-    width: 52%;
+    width: 55%;
     display: flex;
     justify-content: space-between;
 }
@@ -127,7 +145,7 @@ footer {
 }
 
 footer ul {
-    width: 52%;
+    width: 55%;
     font-size: 11px;
 }
 
